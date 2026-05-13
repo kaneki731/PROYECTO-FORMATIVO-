@@ -2,21 +2,21 @@
 Herramienta enfocada en dispositivos IOT con enfoque en recolección de datos del ambiente humedad, temperatura ambiente etc.  
 Estructura del Proyecto 
 Frontend:
-- HTML5
-- CSS3
-- JavaScript
+ HTML5
+ CSS3
+ JavaScript
 
 Backend:
-- PHP
+ PHP
 
 Database:
-- MySQL
+ MySQL
 
 Server:
-- Ubuntu Server 24.04
-- Nginx
+Ubuntu Server 24.04
+Nginx
 
 IoT:
-- MQTT
-- ESP32
+ MQTT
+ESP32
 
