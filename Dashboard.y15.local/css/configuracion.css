@@ -1,0 +1,239 @@
+.inputs-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:20px;
+margin-top:15px;
+}
+
+input[type="number"]{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+
+}
+
+.alerta-info{
+margin-top:15px;
+padding:12px;
+background:#ffe5e5;
+border-radius:8px;
+color:#b30000;
+}
+
+.alerta-info.azul{
+background:#e6f0ff;
+color:#003399;
+}
+
+.notificacion-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+border:1px solid #eee;
+border-radius:10px;
+margin-top:10px;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido{
+  flex:1;
+  padding:40px;
+  transition:all 0.3s ease;
+}
+
+/* INPUT UNIDAD */
+.input-unidad{
+position: relative;
+}
+
+.input-unidad span{
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+color: #666;
+pointer-events: none;
+}
+
+.input-unidad input{
+padding-right: 30px;
+width: 100%;
+box-sizing: border-box;
+}
+
+/* TITULOS */
+h2{
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+img.icono-config{
+width: 40px;
+height: 40px;
+object-fit: contain;
+}
+
+/* LAYOUT PRINCIPAL */
+.config-layout{
+display: grid;
+grid-template-columns: 3fr 1fr;
+gap: 25px;
+align-items: start;
+}
+
+/* COLUMNA DERECHA */
+.config-lateral{
+display: flex;
+flex-direction: column;
+gap: 25px;
+}
+
+/* TARJETAS PERFIL Y ACCIONES */
+.config-lateral .config-card{
+background: #ffffff;
+border-radius: 16px;
+padding: 22px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15),
+    0 2px 4px rgba(0,0,0,0.1);}
+
+
+
+box-shadow: 
+  0 6px 12px rgba(0,0,0,0.15),
+  0 2px 4px rgba(0,0,0,0.1);
+
+
+/* TITULO PERFIL */
+.config-lateral .config-card h2{
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 20px;
+color: #1e293b;
+}
+
+
+/* BOTONES ACCIONES */
+.config-lateral button{
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 10px;
+background: #eef2f7;
+color: #1e293b;
+font-weight: 600;
+cursor: pointer;
+margin-bottom: 10px;
+transition: all 0.2s ease;
+}
+
+.config-lateral button:hover{
+background: #e2e8f0;
+}
+
+/* BOTON GUARDAR */
+.guardar-config{
+margin-top: 40px;
+display: flex;
+justify-content: right;
+}
+
+.btn-guardar{
+background: #3b4d63;
+color: white;
+border: none;
+border-radius: 14px;
+padding: 18px 40px;
+font-size: 18px;
+font-weight: 600;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 12px;
+box-shadow: 0 15px 35px rgba(0,0,0,0.3),
+0 5pc 15px rgba(0,0,0,0.2);
+transition: all 0.2s ease;
+}
+
+.btn-guardar:hover{
+background: #2f3f53;
+transform: translateY(-2px);
+}
+
+.icono-guardar{
+width:22px;
+height:22px;
+}
+
+
+/* Inputs tipo select */
+.config-card select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9fafb;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.config-card select:hover {
+    border-color: #999;
+}
+
+/* Focus (cuando haces click) */
+.config-card select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3),
+    0 5pc 15px rgba(0,0,0,0.2);
+}
+
+.config-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+box-shadow: 
+  0 6px 12px rgba(0,0,0,0.15),
+  0 2px 4px rgba(0,0,0,0.1);    
+}
+
+.config-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.config-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.input-box {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-box label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #555;
+}
+.config-card:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+
+.config-card.recoleccion-datos {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.config-principal {
+    width: 100%;
+}

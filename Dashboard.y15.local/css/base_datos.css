@@ -1,0 +1,637 @@
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  height: calc(100vh);
+  background: linear-gradient(180deg, #334155);
+  color: white;
+  padding: 20px 10px;
+  overflow: hidden;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1000;
+  border-radius: 0px 20px 0 20px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25),
+    0 4px 10px rgba(0,0,0,0.15);
+  }
+
+.logout {
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  width: 250px;
+}
+/*  EXPANSIÓN  */
+.sidebar:hover {
+  width: 250px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.35),
+    0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+
+/*BASE DE DATOS*/
+
+.cards-container{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+.card{
+  background:rgb(255, 255, 255);
+  border-radius:12px;
+  padding:20px;
+  width:220px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  border-left:5px solid gray;
+}
+
+.card-title{
+  font-size:14px;
+  color:#555;
+}
+
+.card {
+  color:#000;
+  font-weight:700;
+  margin:10px 0;
+  font-size:26px;
+}
+.card-sub{
+  font-size:15px;
+  color: #000;;
+}
+
+
+/* Colores */
+
+.card-blue{
+  h2 {
+    color: #000000;
+
+  }
+  border-left-color:#3b82f6;
+}
+
+.card-purple{
+  border-left-color:#6366f1;
+}
+
+.card-green{
+  border-left-color:#22c55e;
+}
+
+.card-orange{
+  border-left-color:#f97316;
+}
+
+.filtros{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.tabla-datos{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+.tabla-datos th{
+background:#334155;
+color:white;
+padding:12px;
+}
+
+.tabla-datos td{
+padding:10px;
+border-bottom:1px solid #eee;
+}
+
+.exportar{
+display:flex;
+gap:20px;
+margin-top:20px;
+}
+
+.exportar button{
+padding:12px 10px; 
+border:none;
+border-radius:8px;
+background:#334155;
+color:white;
+cursor:pointer;
+}
+
+/* TARJETA DE FILTROS */
+
+.filtros-card h3{
+margin-bottom:20px;
+font-size:18px;
+color:#333;
+}
+
+/*  FILTROS */
+.filtros-box{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 100%;
+}
+
+.tipo-consulta {
+  margin-bottom: 15px;
+}
+
+/*  EXPORTAR */
+.export-box{
+  h3{
+  margin-bottom:10px;
+}
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  margin-top:30px;
+}
+
+/* subtitulo */
+.subtexto{
+  font-size:13px;
+  color:#666;
+  margin-bottom:15px;
+}
+
+/* BOTON */
+
+.btn-buscar{
+background:#3b4b63;
+color:white;
+border:none;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+.btn-buscar:hover{
+background:#2d3b50;
+}
+
+/*TABLA DE DATOS BD*/
+
+.tabla-datos{
+width:100%;
+border-collapse:collapse;
+table-layout:fixed;
+}
+
+.tabla-datos th,
+.tabla-datos td{
+padding:12px;
+text-align:center;
+}
+
+.tabla-datos th{
+background:#3b4b63;
+color:white;
+}
+
+.tabla-datos td{
+border-bottom:1px solid #ddd;
+}
+
+.tabla-datos tr:hover{
+background:#f5f7fa;
+}
+
+/*BOTONES PAG*/
+
+.paginacion{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.paginacion a{
+padding:8px 14px;
+border-radius:6px;
+background:#f1f1f1;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.paginacion a:hover{
+background:#dcdcdc;
+}
+
+.paginacion a.activo{
+background:#3c4b61;
+color:white;
+}
+
+.paginacion .btn{
+background:#e5e7eb;
+}
+
+/*BOTONES DE PAG2*/
+
+.paginacion2{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.paginacion2 a{
+    padding:8px 14px;
+    border-radius:6px;
+    background:#f1f1f1;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.paginacion2 a:hover{
+    background:#3498db;
+    color:white;
+}
+
+.paginacion2 a.activo{
+    background:#2c3e50;
+    color:white;
+    font-weight:bold;
+}
+
+.paginacion2 .btn{
+    background:#e5e7eb;
+    font-weight:600;
+}
+
+.paginacion2 .btn:hover{
+    background:#2c3e50;
+    color:white;
+}
+
+/*CSS REPORTES HISTORICOS*/
+
+.tabs-container{
+display:flex;
+gap:10px;
+margin:20px 0;
+}
+
+.tab-btn{
+padding:10px 20px;
+border:none;
+background:#e5e7eb;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+.tab-btn.active{
+background:#334155;
+color:white;
+}
+
+.tab-content{
+display:none;
+}
+
+.tab-content.active{
+display:block;
+}
+
+.temperatura{
+background:#334155;
+}
+
+.humedad{
+background:linear-gradient(90deg,#2c6ed5,#3d8bff);
+}
+
+.resumen{
+display:flex;
+gap:20px;
+margin-top:20px;
+}
+
+.exportar-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:15px;
+}
+
+.export{
+padding:15px;
+border-radius:10px;
+border:1px solid #ccc;
+cursor:pointer;
+background:white;
+}
+
+/* CUADRO PROM*/
+
+.resumen{
+display:flex;
+gap:25px;
+margin-top:30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+
+.resumen-card{
+flex:0 0 45%;
+min-width:300px;
+padding:28px;
+border-radius:14px;
+color:rgb(255, 255, 255);
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* tarjeta temperatura */
+
+.temperatura{
+background:linear-gradient(135deg,#3b4a5f,#4c5f78);
+}
+
+/* tarjeta humedad */
+
+.humedad{
+background:linear-gradient(135deg,#2f6fe4,#1e57c9);
+}
+
+.resumen-card h3{
+margin-bottom:25px;
+font-size:20px;
+font-weight:600;
+color: white !important;
+}
+
+/* filas */
+
+.fila{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:16px;
+margin:14px 0;
+}
+
+.fila span{
+opacity:0.9;
+}
+
+.fila strong{
+font-size:26px;
+font-weight:700;
+}
+
+/* linea separadora */
+
+.linea{
+height:1px;
+background:rgba(255,255,255,0.25);
+margin:12px 0;
+}
+
+/* texto inferior */
+
+.registros{
+font-size:13px;
+opacity:0.8;
+margin-top:12px;
+}
+
+.resumen-card:hover{
+transform:translateY(-3px);
+transition:0.2s;
+}
+
+/*ESTILOS DE LOS DESCARGABLES*/
+
+/* contenedor */
+
+.exportar-grid{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+/* tarjeta */
+
+.export-btn{
+flex:1;
+min-width:180px;
+background:#f8f9fb;
+border:1px solid #e1e4ea;
+border-radius:12px;
+padding:20px;
+text-align:center;
+text-decoration:none;
+color:#333;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+transition:0.25s;
+cursor:pointer;
+}
+
+/* quitar subrayado */
+
+.export-btn:hover{
+text-decoration:none;
+transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* iconos */
+
+.export-btn i{
+font-size:32px;
+}
+
+/* colores */
+
+.export-btn.csv i{
+color:#5a6c7d;
+}
+
+.export-btn.excel i{
+color:#28a745;
+}
+
+.export-btn.json i{
+color:#f39c12;
+}
+
+.export-btn.pdf i{
+color:#e74c3c;
+}
+
+/* texto */
+
+.export-btn span{
+font-weight:600;
+font-size:15px;
+}
+
+.export-btn:active{
+transform:scale(0.97);
+}
+
+/* FILTROS REPORTES */
+
+
+/* tipo de consulta */
+
+.tipo-consulta{
+margin-bottom:20px;
+font-size:14px;
+color:#374151;
+}
+
+.tipo-consulta label{
+margin-right:15px;
+cursor:pointer;
+}
+
+/* grid de filtros */
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:15px;
+  align-items: end;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.filtros-grid-reportes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  align-items: end;
+  width: 100%;
+  border-radius:12px;
+}
+
+.modo-unico {
+  grid-template-columns: 2fr 1fr;
+}
+
+.campo.boton {
+  display: flex;
+}
+
+/* campos */
+
+.campo{
+  display:grid;
+  flex-direction:column;
+}
+
+.campo label{
+  font-size:13px;
+  margin-bottom:6px;
+  color:#374151;
+}
+
+.campo input{
+  padding:10px 12px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  font-size:14px;
+  height: 42px;
+  width: 100%;
+}
+
+/* boton */
+
+.btn-consultar{
+height: 42px;
+width: 100%;
+padding:10px 20px;
+background:#3b4a5f;
+color:white;
+border:none;
+border-radius:10px;
+font-size:15px;
+font: weight 2px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+transition:0.2s;
+}
+
+.btn-consultar:hover{
+background:#2f3b4d;
+transform:translateY(-1px);
+}
+
+.contenido{
+margin-left:100px;
+padding:40px;
+transition:margin-left 0.25s ease;
+}
+
+/* cuando la sidebar se expande */
+
+.sidebar:hover ~ .contenido{
+margin-left:280px;
+}
+
+/*Tabla de datos filtrados RH*/
+
+.tabla-reporte{
+margin-top:30px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.tabla-reporte table{
+width:100%;
+border-collapse:collapse;
+}
+
+.tabla-reporte th{
+background:#2c3e50;
+color:white;
+padding:10px;
+}
+
+.tabla-reporte td{
+padding:10px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
+

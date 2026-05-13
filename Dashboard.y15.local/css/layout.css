@@ -1,0 +1,31 @@
+/* ===== RESET CLAVE ===== */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 80px;
+  transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+  padding: 40px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* cuando sidebar está abierto */
+body.sidebar-open .contenido {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+}
+

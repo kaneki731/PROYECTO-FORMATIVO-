@@ -1,0 +1,466 @@
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  height: calc(100vh - 30px);
+  background: linear-gradient(180deg, #334155);
+  color: white;
+  padding: 20px 10px;
+  overflow: hidden;
+  transition: width 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1000;
+  border-radius: 0px 20px 0 20px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25),
+    0 4px 10px rgba(0,0,0,0.15);
+
+  backdrop-filter: blur(6px);
+}
+/*  EXPANSIÓN  */
+.sidebar:hover {
+  width: 280px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.35),
+    0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  width: 32px;
+  min-width: 32px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+/* ocultar texto */
+.logo-text {
+  opacity: 0;
+  text-align: center;
+}
+
+/* mostrar texto */
+.sidebar:hover .logo-text {
+  opacity: 1;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+/* ===== ITEMS ===== */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: background 0.2s ease;
+  font-weight: 400; /* corregido */
+  white-space: nowrap;
+  position: relative;
+}
+
+/* iconos */
+.menu-item img {
+  width: 22px;
+  min-width: 22px;
+}
+
+/* texto oculto */
+.menu-item span {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* mostrar texto */
+.sidebar:hover .menu-item span {
+  opacity: 1;
+}
+
+/* hover */
+.menu-item:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* activo */
+.menu-item.active {
+  background-color: rgba(255,255,255,0.25);
+}
+
+/* rayita lateral */
+.menu-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0%;
+  width: 6px;
+  background: #ffffff;
+  border-radius: 4px;
+  transition: height 0.2s ease;
+}
+
+.menu-item:hover::before,
+.menu-item.active::before {
+  height: 70%;
+}
+
+/* logout */
+.logout {
+  margin-top: auto;
+  color: #ff6b6b;
+}
+
+.logout:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+
+.logout img {
+  filter: brightness(0) saturate(100%) invert(60%) sepia(98%) saturate(500%) hue-rotate(320deg);
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  flex: 1;
+  position: relative;
+  margin-left: 80px;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+}
+
+
+body.sidebar-open .contenido {
+  margin-left: 260px;
+}
+.sidebar:hover ~ .contenido {
+ margin-left: 280px;
+
+}
+
+body {
+  color: #363a41;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== BARRA SUPERIOR ===== */
+.barra-estado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #334155;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.estado-izq {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.estado-der {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.circulo {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.online {
+  background-color: #22c55e;
+}
+
+.offline {
+  background-color: #ef4444;
+}
+
+/* ===== FILTROS ===== */
+.filtros {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  margin-bottom: 12px;
+}
+
+.filtros div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.filtros select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+}
+
+.filtros button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: #3f4f63;
+  color: white;
+  cursor: pointer;
+  height: 42px;
+  white-space: nowrap;
+}
+
+.filtros div label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===== GRÁFICOS ===== */
+.contenedor-graficos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 40px;
+  
+}
+
+.card {
+  flex: 1;
+  border-radius: 16px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.grafico-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.12),
+    0 4px 10px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  transition: 0.2s;
+  display: flex;
+  flex: 1;
+height: 320px; /* 👈 altura base */
+  widht:100%;
+}
+
+.grafico-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.18);
+  
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* ===== CARDS ===== */
+.cards-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+
+.temperatura {
+  background: linear-gradient(135deg,#3c4b5f,#4f657f);
+}
+
+.humedad {
+  background: linear-gradient(135deg,#2c6ed5,#3d8bff);
+}
+
+.valor {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+/* ===== PERFIL DE USUARIO AJUSTADO ===== */
+/* ===== PERFIL / ROL ===== */
+/* ===== PERFIL MODERNO ===== */
+
+.perfil{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    background: #f1f5f9;
+    border-radius: 999px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: 20px;
+}1~.perfil{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    background: #f1f5f9;
+    border-radius: 999px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: 20px;
+}1~.perfil{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    background: #f1f5f9;
+    border-radius: 999px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: 20px;
+}1~.perfil{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    background: #f1f5f9;
+    border-radius: 999px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: 20px;
+}
+.perfil{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    background: #f1f5f9;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.perfil span {
+  background: #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+body, .contenido, .main, .container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.perfil h2 {
+    margin: 0 0 15px 50px; /* El último valor (5px) lo despega del borde izquierdo */
+    font-size: 15px;
+    color: #475569;
+    letter-spacing: 1px;
+}
+
+.perfil p {
+    margin: 10px 5px;   /* Añadimos margen lateral a los párrafos */
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para los valores (badges) */
+.perfil p span {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1e293b;
+    min-width: 80px;    /* Hace que todos los botones tengan un tamaño base similar */
+    text-align: center;
+}
+
+.toast-alerta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff4d4d;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: 20px;
+  color: #555;
+}
+
